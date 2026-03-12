@@ -1,0 +1,116 @@
+/* ------ NAVBARRA ------ */
+
+.navbar {
+    background-color: #0d0d0f;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0 5%;
+    height: 60px;
+    border-bottom: 1px solid #2a2a32;
+}
+
+.logoa {
+    color: #c8973a;
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ------ MENU BOTOIA ------ */
+
+.menu-botoia {
+    width: 36px;
+    height: auto;
+    cursor: pointer;
+    
+}
+
+.menu-botoia img {
+    width: 120%;
+    height: auto;
+    
+}
+
+
+/* ------ MENU DESPLEGABLEA ------ */
+
+.menu-desplegablea {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #0d0d0f;
+    border-bottom: 1px solid #2a2a32;
+    padding: 0;
+    height: 0;  
+}
+
+
+.menu-desplegablea.irekita {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    padding: 12px 0;
+    
+}
+
+.menu-desplegablea a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 14px 5%;
+    font-size: 15px;
+    border-bottom: 1px solid #1a1a20;
+}
+
+.menu-desplegablea a:last-of-type {
+    border-bottom: none;
+}
+
+.menu-desplegablea a:hover {
+    color: #fff;
+    background-color: #16161c;
+    
+}
+
+/* Saioa hasi botoia */
+.menu-desplegablea .menu-saioa {
+    color: #0d0d0f;
+    background-color: #c8973a;
+    margin: 12px 5%;
+    padding: 12px 5%;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    border: none;
+}
+
+.menu-desplegablea .menu-saioa:hover {
+    background-color: #b5852e;
+    color: #0d0d0f;
+}
+
+/* Erregistratu botoia */
+.menu-desplegablea .menu-erregistratu {
+    color: #0d0d0f;
+    background-color: #c8973a;
+    margin: 12px 5%;
+    padding: 12px 5%;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    border: none;
+}
+
+.menu-desplegablea .menu-erregistratu:hover {
+    background-color: #b5852e;
+    color: #0d0d0f;
+}

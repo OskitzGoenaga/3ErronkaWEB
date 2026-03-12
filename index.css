@@ -1,0 +1,48 @@
+/* ------ SARRERA ------ */
+
+main{
+    background-color: #0d0d0f;
+    color: #fff;
+}
+
+.sarrera {
+    height: 90dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.tituloa {
+    font-size: 120%;
+    color: goldenrod;
+    background-color: rgba(200, 151, 58, 0.12);
+    margin-bottom: 20px;
+    padding: 1.5%;
+    border: 1px solid rgba(200, 151, 58, 0.25);
+    border-radius: 20px;
+}   
+
+.herriz-herri {
+    font-size: 200%;
+    font-family: 'Cormorant Garamond', serif;
+    margin: 3% 0px;
+}
+
+.estatistikak {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* FOOTERRA */
+
+footer {
+    background-color: #0d0d0f;
+    height: 10vh;
+    border-top: 1px solid #2a2a32;
+}
