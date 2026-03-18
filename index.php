@@ -43,26 +43,5 @@
     <footer>
         <div>FOOTERRA</div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script>
-        // Menuaren botoia sakatzean menua ireki/itxi
-        $(".menu-botoia").click(function (e) {
-            e.stopPropagation();
-            $(".menu-botoia").toggleClass("irekita");
-            $(".menu-desplegablea").toggleClass("irekita");
-        });
-
-        // Edozein tokitan klik egitean menu itxi
-        $(document).click(function () {
-            $(".menu-botoia").removeClass("irekita");
-            $(".menu-desplegablea").removeClass("irekita");
-        });
-
-        // Menuaren barruan klik egitean ez itxi
-        $(".menu-desplegablea").click(function (e) {
-            e.stopPropagation();
-        });
-    </script>
 </body>
-
 </html>
