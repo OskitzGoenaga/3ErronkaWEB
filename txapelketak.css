@@ -1,0 +1,93 @@
+body{
+    padding-top:90px;
+    width: 70%;
+    margin: auto;
+    background-color: #0d0d0f;
+}
+ 
+.txapelketak{
+    align-items: center;
+}
+
+.txapelketak>h1{
+    color: #c8973a;
+    margin-bottom: 30px;
+}
+
+#azalpena{
+    color:rgb(137, 137, 137);
+
+}
+
+.filtroak{
+    width: 100%;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filtro_barra>select>option, select{
+    padding: 7px 17px;
+    border-radius: 5px;
+    background-color: rgb(36, 36, 36);
+    border: 5px solid rgb(36, 36, 36);;
+    color: rgb(137, 137, 137);
+    transition: border-color 0.5s;
+
+}
+
+.filtro_btn>select>option:hover{
+    border-top: 4px solid #c8973a;
+}
+
+.filtro_btn > select>option:nth-child(1){
+    margin: 20px 20px 20px 0px;
+}
+.filtro_btn > select>option:nth-child(2){
+    margin: 20px 20px 20px 0px;
+}
+.filtro_btn > select>option:nth-child(3){
+    margin: 0px 20px 20px 0px;
+}
+.filtro_btn > select>option:nth-child(4){
+    margin: 0px 20px 20px 0px;
+}
+
+.txapelketa_bakoitza{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    color:rgb(137, 137, 137);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    gap: 30px;
+    border-radius: 10px;
+    background-color: rgb(36, 36, 36);
+}
+
+#titulu_txap{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.egoera{
+    padding: 5px 15px;
+    border-radius: 5px;
+    color:white;
+    background: rgba(42,107,69,0.2);
+}
+
+.linea{
+    border-top: 2px solid grey;
+    width: 100%;
+}
+
+ 
+ 
+ 
