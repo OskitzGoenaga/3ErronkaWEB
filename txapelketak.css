@@ -68,7 +68,7 @@ body{
     background-color: rgb(36, 36, 36);
 }
 
-#titulu_txap{
+.titulu_txap{
     color: white;
     text-decoration: none;
     cursor: pointer;
