@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="txapelketak.css">
     <link rel="stylesheet" href="orokorra.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
@@ -80,6 +81,4 @@
             });
         });
     </script>
-</body>
-
-</html>
+    <?php include_once "footer.php"; ?>
