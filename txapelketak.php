@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="txapelketak.css">
     <link rel="stylesheet" href="orokorra.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
@@ -67,3 +68,4 @@
 </body>
 
 </html>
+>>>>>>> 1a05c247bfaa2467a1ce635d2a02ea6b3f1f5177

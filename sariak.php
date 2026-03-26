@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="orokorra.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="sariak.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
@@ -76,6 +77,3 @@
     </main>
 
     <?php include_once "footer.php"; ?>
-</body>
-
-</html>
