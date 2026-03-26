@@ -81,4 +81,10 @@
             });
         });
     </script>
+<<<<<<< HEAD
     <?php include_once "footer.php"; ?>
+=======
+</body>
+
+</html>
+>>>>>>> 1a05c247bfaa2467a1ce635d2a02ea6b3f1f5177
