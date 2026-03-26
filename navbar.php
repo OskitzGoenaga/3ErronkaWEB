@@ -1,9 +1,9 @@
 <header>
         <nav class="navbar">
-            <!-- LOGOA -->
-            <div class="logoa">EuskalMus</div>
+
+            <div class="logoa"><a href="index.php">EuskalMus</a></div>
             
-            <!--  MENU DESPLEGABLEA -->
+            
             <div class="menu-desplegablea">
                 <a href="index.php">Hasiera</a>
                 <a href="txapelketak.php">Txapelketak</a>
@@ -14,7 +14,6 @@
                 <a href="erregistratu.php" class="menu-erregistratu">Erregistratu</a>
             </div>
 
-            <!-- HAMBURGESA BOTOIA -->
             <div class="menu-botoia">
                 <img src="Argazkiak/menua.png" alt="menua">
             </div>

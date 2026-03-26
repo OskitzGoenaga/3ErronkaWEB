@@ -1,0 +1,86 @@
+main {
+    background-color: #0d0d0f;
+    color: #fff;
+    min-height: 100dvh;
+    padding-top: 60px;
+}
+
+.sariak{
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 0px;
+}
+
+.sariak-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.sariak-titulua {
+    font-size: 2.5rem;
+    color: #c8973a;
+    margin-bottom: 8px;
+}
+
+.sariak-azpititulua {
+    font-size: 1rem;
+    color: #a09880;
+}
+
+
+.txapelketa-blokea {
+    margin-bottom: 48px;
+}
+
+.txap-izena {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2a2a32;
+}
+
+/* -- Sariak -- */
+
+.sariak-zerrenda {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.saria-karta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    border-radius: 10px;
+    border: 1px solid #2a2a32;
+    background-color: #141416;
+}
+
+.saria-1  { border-left: 4px solid #e8b84b; }
+.saria-2  { border-left: 4px solid #b0b0b8; }
+.saria-3  { border-left: 4px solid #cd7f32; }
+.saria-txikia { border-left: 4px solid #444451;}
+
+.saria-ikonoa {
+    font-size: 2rem;
+    width: 48px;
+    text-align: center;
+}
+
+
+.saria-posizioa {
+    font-size: 0.75rem;
+    font-weight: 600px;
+    text-transform: uppercase;
+    color: #5a5548;
+    margin-bottom: 4px;
+}
+
+.saria-deskribapena {
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
