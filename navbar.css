@@ -23,6 +23,11 @@
     letter-spacing: 0.5px;
 }
 
+.logoa a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* ------ MENU BOTOIA ------ */
 
 .menu-botoia {
