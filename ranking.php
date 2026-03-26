@@ -6,9 +6,10 @@
     <title>Txapelketak</title>
     <link rel="stylesheet" href="orokorra.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="ranking.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body>
     <?php include_once "navbar.php";?>
-    
-</body>
-</html>
+
+    <?php include_once "footer.php";?>

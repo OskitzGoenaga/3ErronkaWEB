@@ -11,7 +11,7 @@
     top: 0;
     right: 0;
     left: 0;
-    padding: 0 5%;
+    padding: 0px 5%;
     height: 60px;
     border-bottom: 1px solid #2a2a32;
 }
@@ -20,7 +20,7 @@
     color: #c8973a;
     font-size: 20px;
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
+    font-weight: bold;
     letter-spacing: 0.5px;
 }
 
@@ -35,13 +35,11 @@
     width: 36px;
     height: auto;
     cursor: pointer;
-    
-}
+} 
 
 .menu-botoia img {
     width: 120%;
     height: auto;
-    
 }
 
 
@@ -63,8 +61,8 @@
 .menu-desplegablea.irekita {
     display: flex;
     flex-direction: column;
-    height: 400px;
-    padding: 12px 0;
+    height: 377px;
+    padding: 12px 0px;
     
 }
 
@@ -94,7 +92,7 @@
     padding: 12px 5%;
     border-radius: 8px;
     text-align: center;
-    font-weight: 600;
+    font-weight: bold;
     border: none;
 }
 
@@ -111,7 +109,7 @@
     padding: 12px 5%;
     border-radius: 8px;
     text-align: center;
-    font-weight: 600;
+    font-weight: bold;
     border: none;
 }
 

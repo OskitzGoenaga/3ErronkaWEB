@@ -1,0 +1,73 @@
+footer { 
+    border-top: 1px solid #2a2a32; 
+    background-color: #0d0d0f; 
+    color: #fff; 
+    padding: 20px 0; 
+} 
+
+.footerra{ 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    width: 80%; 
+    margin: auto; 
+    gap: 20px;
+} 
+
+/* Footer logoa eta deskribapena */ 
+
+
+.footer-logoa a { 
+    color: #c8973a; 
+    text-decoration: none; 
+    font-size: 1.4rem; 
+    font-weight: 700px; 
+} 
+
+.footer-deskribapena { 
+    font-size: 0.85rem; 
+    color: #5a5548; 
+} 
+
+/* Footer nabigazio linkak */ 
+
+.footer-estekak { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+} 
+
+.footer-tituloa { 
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    color: #c8973a; 
+    margin-bottom: 4px; 
+} 
+
+.footer-estekak a { 
+    color: #a09880; 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+} 
+
+.footer-estekak a:hover { 
+    color: #fff; 
+} 
+
+/* Footer kontaktua */ 
+
+.footer-kontaktua { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+}
+
+/* Footer azpikoa */ 
+
+.footer-azpian {
+    text-align: center;
+    border-top: 1px solid #1a1a20; 
+    padding: 20px 0px 0px 0px;
+    margin-top: 20px; 
+}
