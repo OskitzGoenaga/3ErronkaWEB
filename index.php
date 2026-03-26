@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="orokorra.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
@@ -40,8 +41,4 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div>FOOTERRA</div>
-    </footer>
-</body>
-</html>
+    <?php include_once("footer.php"); ?>
