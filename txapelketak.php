@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="txapelketak.css">
     <link rel="stylesheet" href="orokorra.css">
     <link rel="stylesheet" href="footer.css">
+
 </head>
 
 <body>
@@ -47,7 +48,8 @@
         <?php foreach ($stmt as $txapelketak): ?>
             <div class="txapelketa_bakoitza">
                 <p class="egoera"><?= $txapelketak["egoera"]; ?></p>
-                <a id="titulu_txap" href="#"><?= $txapelketak["izena"]; ?></a>
+                <a class="titulu_txap"
+                    href="txapelketa_barnea.php?id=<?= $txapelketak['id']; ?>"><?= $txapelketak["izena"]; ?></a>
                 <div class="kokalekua">
                     <p>📍 Lekua:
                         <span><?= $txapelketak["herria"]; ?> - <?= $txapelketak["tokia"] ?></span>
@@ -63,22 +65,6 @@
 
     <script src="https://code.jquery.com/jquery-4.0.0.js"
         integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function () {
-            $(".egoera").each(function () {
-                var egoera = $(this).text().trim();
-
-                if (egoera == "Izen ematen") {
-                    $(this).css("background", "rgba(42,107,69,0.2)");
-                    $(this).css("color", "#5dba85");
-                } else if (egoera == "Amaituta") {
-                    $(this).css("background", "rgba(135, 41, 22, 0.46)");
-                    $(this).css("color", "#b86b5d");
-                } else {
-                    $(this).css("background", "rgba(190, 166, 45, 0.46)");
-                    $(this).css("color", "#cdd189");
-                }
-            });
-        });
-    </script>
-    <?php include_once "footer.php"; ?>
+    <script src="egoeraKoloreak.js"></script>
+    
+    <?php include_once("footer.php"); ?>
