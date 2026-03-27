@@ -1,47 +1,60 @@
 /* ------ SARRERA ------ */
 
-main{
-    background-color: #0d0d0f;
-    color: #fff;
+main {
+  background-color: #0d0d0f;
+  color: #fff;
+}
+
+.hasiera {
+  height: 100dvh;
+  position: relative;
+  inset: 0;
+  background-image: url('Argazkiak/bilbo.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(0.65);
 }
 
 .sarrera {
-    height: 90dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: auto;
-    text-align: center;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  text-align: center;
 }
 
 .tituloa {
-    font-size: 120%;
-    color: goldenrod;
-    background-color: rgba(200, 151, 58, 0.12);
-    margin-bottom: 20px;
-    padding: 1.5%;
-    border: 1px solid rgba(200, 151, 58, 0.25);
-    border-radius: 20px;
-}   
+  font-size: 120%;
+  color: white;
+  background-color: rgba(200, 150, 58, 0.453);
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 10px;
+}
 
 .herriz-herri {
-    font-size: 200%;
-    margin: 3% 0px;
+  font-size: 250%;
 }
 
 .estatistikak {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  border-radius: 5px;
+  padding: 10px;
 }
 
-/* FOOTERRA */
+.estatistikak p+p{
+  border-left: 1px solid black;
+}
 
-footer {
-    background-color: #0d0d0f;
-    height: 10vh;
-    border-top: 1px solid #2a2a32;
+.estatistikak p{
+  padding: 5px;
 }
