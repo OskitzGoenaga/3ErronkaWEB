@@ -2,7 +2,8 @@ main {
     background-color: #0d0d0f;
     color: #fff;
     min-height: 80dvh;
-    padding-top: 60px;
+    position: relative;
+    margin-top: 60px;
 }
 
 .sariak{

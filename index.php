@@ -37,14 +37,14 @@
 
                     $stmt = $pdo->prepare("SELECT COUNT(id) AS total FROM jokalariak");
                     $stmt->execute();
-                    $txap2 = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $jok = $stmt->fetch(PDO::FETCH_ASSOC);
                     ?>
                     <div>
                         <span><?= $txap["total"]; ?></span>
                         <span>TXAPELKETA AKTIBO</span>
                     </div>
                     <div>
-                        <span><?= $txap2["total"]; ?></span>
+                        <span><?= $jok["total"]; ?></span>
                         <span>JOKALARI ERREGISTRATU</span>
                     </div>
                     <div>
