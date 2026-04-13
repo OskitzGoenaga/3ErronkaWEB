@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="txapelketak.css">
     <link rel="stylesheet" href="orokorra.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="txapelketa_kaxa.css">
 
 </head>
 

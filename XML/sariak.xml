@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE txapelketak [
     <!ELEMENT txapelketak (txapelketa+)>
     <!ELEMENT txapelketa (sariak)>
@@ -9,24 +9,44 @@
     <!ELEMENT deskribapena (#PCDATA)>
 ]>
 <txapelketak>
-    <txapelketa izena="Donostiako Udaberriko Mus Txapelketa 2026">
-        <sariak>
-            <saria>
-                <posizioa>1</posizioa>
-                <deskribapena>Txapela eta 1000 euro</deskribapena>
-            </saria>
-            <saria>
-                <posizioa>2</posizioa>
-                <deskribapena>Trofeoa eta 500 euro</deskribapena>
-            </saria>
-            <saria>
-                <posizioa>3</posizioa>
-                <deskribapena>Domina eta 100 euro</deskribapena>
-            </saria>
-            <saria>
-                <posizioa>4 - 10</posizioa>
-                <deskribapena>Mus baraja</deskribapena>
-            </saria>
-        </sariak>
-    </txapelketa>
+  <txapelketa izena="Donostiako Udaberriko Mus Txapelketa 2026">
+    <sariak>
+      <saria>
+        <posizioa>1</posizioa>
+        <deskribapena>Txapela eta 1000 euro</deskribapena>
+      </saria>
+      <saria>
+        <posizioa>2</posizioa>
+        <deskribapena>Trofeoa eta 500 euro</deskribapena>
+      </saria>
+      <saria>
+        <posizioa>3</posizioa>
+        <deskribapena>Domina eta 100 euro</deskribapena>
+      </saria>
+      <saria>
+        <posizioa>4 - 10</posizioa>
+        <deskribapena>Mus baraja</deskribapena>
+      </saria>
+    </sariak>
+  </txapelketa>
+  <txapelketa izena="Bilboko Udaberriko Kopa 2026">
+    <sariak>
+      <saria>
+        <posizioa>1</posizioa>
+        <deskribapena>Txapela</deskribapena>
+      </saria>
+      <saria>
+        <posizioa>2</posizioa>
+        <deskribapena>Kopa</deskribapena>
+      </saria>
+      <saria>
+        <posizioa>3</posizioa>
+        <deskribapena>Domina</deskribapena>
+      </saria>
+      <saria>
+        <posizioa>4 - 10</posizioa>
+        <deskribapena>10€</deskribapena>
+      </saria>
+    </sariak>
+  </txapelketa>
 </txapelketak>
