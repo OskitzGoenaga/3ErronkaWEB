@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="orokorra.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="txapelketa_kaxa.css">
     <link rel="icon" type="image/x-icon" href="Argazkiak/icono.ico" sizes="any">
 </head>
 
@@ -36,15 +37,49 @@
 
                     $stmt = $pdo->prepare("SELECT COUNT(id) AS total FROM jokalariak");
                     $stmt->execute();
-                    $txap2 = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $jok = $stmt->fetch(PDO::FETCH_ASSOC);
                     ?>
-
-                    <p>Txapelketa aktibo: <?= $txap["total"]; ?></p>
-                    <p>Jokalari erregistratu: <?= $txap2["total"]; ?></p>
-                    <p>Herri parte hartzen: <?= $txap["total2"]; ?></p>
+                    <div>
+                        <span><?= $txap["total"]; ?></span>
+                        <span>TXAPELKETA AKTIBO</span>
+                    </div>
+                    <div>
+                        <span><?= $jok["total"]; ?></span>
+                        <span>JOKALARI ERREGISTRATU</span>
+                    </div>
+                    <div>
+                        <span><?= $txap["total2"]; ?></span>
+                        <span>HERRI PAKTE HARTZEN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="txapelketa_akt">
+            <div class="hasiera">
+                <h2 class="txapelketa_akt_tituloa">Txapelketa Aktiboak</h2>
+                <div class="txapelketa_akt_karta">
+                    <?php
+                    $stmt = $pdo->prepare("SELECT * FROM txapelketak WHERE egoera in ('izen ematen', 'jolasten')");
+                    $stmt->execute();
+                    ?>
+                    <?php foreach ($stmt as $txapelketak): ?>
+                        <div class="txapelketa_bakoitza">
+                            <p class="egoera"><?= $txapelketak["egoera"]; ?></p>
+                            <a class="titulu_txap"
+                                href="txapelketa_barnea.php?id=<?= $txapelketak['id']; ?>"><?= $txapelketak["izena"]; ?></a>
+                            <div class="kokalekua">
+                                <p>📍 Lekua:
+                                    <span><?= $txapelketak["herria"]; ?> - <?= $txapelketak["tokia"] ?></span>
+                                </p>
+                                <p>📅 Data: <?= $txapelketak["data"]; ?></p>
+                            </div>
+                            <div class="linea"></div>
+                            <p>Bikote kantitatea: <?= $txapelketak["bikote_kant"]; ?></p>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </main>
-    
-    <?php include_once("footer.php"); ?> 
+
+    <?php include_once("footer.php"); ?>

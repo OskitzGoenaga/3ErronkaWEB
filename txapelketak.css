@@ -1,12 +1,10 @@
-body{
-    padding-top:90px;
-    width: 70%;
-    margin: auto;
-    background-color: #0d0d0f;
-}
- 
 .txapelketak{
     align-items: center;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    margin-top: 90px;
+    background-color: #0d0d0f;
 }
 
 .txapelketak>h1{
@@ -53,41 +51,6 @@ body{
 .filtro_btn > select>option:nth-child(4){
     margin: 0px 20px 20px 0px;
 }
-
-.txapelketa_bakoitza{
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    color:rgb(137, 137, 137);
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction:column;
-    align-items: flex-start;
-    gap: 30px;
-    border-radius: 10px;
-    background-color: rgb(36, 36, 36);
-}
-
-.titulu_txap{
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.egoera{
-    padding: 5px 15px;
-    border-radius: 5px;
-    color:white;
-    background: rgba(42,107,69,0.2);
-}
-
-.linea{
-    border-top: 2px solid grey;
-    width: 100%;
-}
-
  
  
  

@@ -6,24 +6,17 @@ main {
 }
 
 .hasiera {
-  height: 100dvh;
   position: relative;
-  inset: 0;
-  background-image: url('Argazkiak/bilbo.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  filter: brightness(0.65);
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
 }
 
 .sarrera {
-  width: 80%;
-  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
   text-align: center;
 }
 
@@ -38,23 +31,43 @@ main {
 
 .herriz-herri {
   font-size: 250%;
+  margin-bottom: 10px;
 }
 
 .estatistikak {
   display: flex;
-  flex-direction: row;
+  gap: 48px;
+  justify-content: center;
   margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.4);
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
-  border-radius: 5px;
-  padding: 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
 }
 
-.estatistikak p+p{
-  border-left: 1px solid black;
+.estatistikak div {
+  text-align: center;
 }
 
-.estatistikak p{
-  padding: 5px;
+.estatistikak div span {
+  display: block;
 }
+
+.estatistikak div span:first-child {
+  font-size: 150%;
+  margin-bottom: 10px;
+}
+
+.estatistikak div span:last-child {
+  font-size: 80%;
+}
+
+.txapelketa_akt {
+  border-top: 1px solid #2a2a32;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.txapelketa_akt_tituloa {
+  font-size: 120%;
+  color: white;
+  margin-bottom: 20px;
+} 

@@ -1,0 +1,33 @@
+.txapelketa_bakoitza{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    color:rgb(137, 137, 137);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    gap: 30px;
+    border-radius: 10px;
+    background-color: rgb(36, 36, 36);
+}
+
+.titulu_txap{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.egoera{
+    padding: 5px 15px;
+    border-radius: 5px;
+    color:white;
+    background: rgba(42,107,69,0.2);
+}
+
+.linea{
+    border-top: 2px solid grey;
+    width: 100%;
+}
