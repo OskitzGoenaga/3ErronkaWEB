@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="arauak.css">
     <link rel="stylesheet" href="arauak.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="icon" type="image/x-icon" href="Argazkiak/icono.ico" sizes="any">
 </head>
 <body>
     <?php include_once "navbar.php";?>
