@@ -2,18 +2,18 @@
     width: 100%;
     height: auto;
     padding: 20px;
-    color:rgb(137, 137, 137);
+    color: var(--color-laugarrena);
     margin-bottom: 20px;
     display: flex;
     flex-direction:column;
     align-items: flex-start;
     gap: 30px;
     border-radius: 10px;
-    background-color: rgb(36, 36, 36);
+    background-color: var(--color-bigarrena);
 }
 
 .titulu_txap{
-    color: white;
+    color: var(--color-txuria);
     text-decoration: none;
     cursor: pointer;
     font-weight: bold;
@@ -23,11 +23,26 @@
 .egoera{
     padding: 5px 15px;
     border-radius: 5px;
-    color:white;
+    color: var(--color-txuria);
     background: rgba(42,107,69,0.2);
 }
 
 .linea{
-    border-top: 2px solid grey;
+    border-top: 2px solid var(--color-txuria);
     width: 100%;
+}
+
+.IzenEmaten{
+    background-color: rgba(42,107,69,0.2);
+    color: #5dba85;
+}
+
+.Amaituta{
+    background-color: rgba(135, 41, 22, 0.46);
+    color: #b86b5d;
+}
+
+.Jolasten{
+    background-color: rgba(190, 166, 45, 0.46);
+    color: #cdd189;
 }

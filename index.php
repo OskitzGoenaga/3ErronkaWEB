@@ -62,21 +62,7 @@
                     $stmt = $pdo->prepare("SELECT * FROM txapelketak WHERE egoera in ('izen ematen', 'jolasten')");
                     $stmt->execute();
                     ?>
-                    <?php foreach ($stmt as $txapelketak): ?>
-                        <div class="txapelketa_bakoitza">
-                            <p class="egoera"><?= $txapelketak["egoera"]; ?></p>
-                            <a class="titulu_txap"
-                                href="txapelketa_barnea.php?id=<?= $txapelketak['id']; ?>"><?= $txapelketak["izena"]; ?></a>
-                            <div class="kokalekua">
-                                <p>📍 Lekua:
-                                    <span><?= $txapelketak["herria"]; ?> - <?= $txapelketak["tokia"] ?></span>
-                                </p>
-                                <p>📅 Data: <?= $txapelketak["data"]; ?></p>
-                            </div>
-                            <div class="linea"></div>
-                            <p>Bikote kantitatea: <?= $txapelketak["bikote_kant"]; ?></p>
-                        </div>
-                    <?php endforeach; ?>
+                   <?php include_once("txapelketa_kaxa.php"); ?>
                 </div>
             </div>
         </div>

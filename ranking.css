@@ -7,13 +7,13 @@
 }
 
 h1 {
-  color: white;
+  color: var(--color-txuria);
   text-align: left;
   margin-bottom: 5px;
 }
 
 .deskribapena {
-  color: #aaa;
+  color: var(--color-laugarrena);
   margin-bottom: 20px;
   font-size: 1em;
 }
@@ -23,20 +23,20 @@ h1 {
   height: 500px;
   overflow-x: auto;
   border-radius: 12px;
-  background-color: #1e1e1e;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 table {
+  border: 2px solid var(--color-bigarrena);
   width: 100%;
   border-collapse: collapse;
-  background-color: #1e1e1e;
+  background-color:rgba(23, 23, 23, 0.729);
   border-radius: 12px;
 }
 
 th {
-  background-color: #2a2a2a;
-  color: #ffcc00;
+  background-color: var(--color-bigarrena);
+  color: var(--color-hirugarrena);
   padding: 14px 10px;
   text-align: left;
   white-space: nowrap;
@@ -44,7 +44,8 @@ th {
 
 td {
   padding: 14px 10px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--color-orokorra);
+  color: var(--color-laugarrena);
   white-space: nowrap;
 }
 

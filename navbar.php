@@ -10,8 +10,8 @@
                 <a href="ranking.php">Rankinga</a>
                 <a href="sariak.php">Sariak</a>
                 <a href="arauak.php">Arauak</a>
-                <a href="saioahasi.php" class="menu-saioa">Saioa hasi</a>
-                <a href="erregistratu.php" class="menu-erregistratu">Erregistratu</a>
+                <a href="hasiSaioa.php" class="menu-saioa">Saioa hasi</a>
+                <a href="erregistratu.php" class="menu-saioa">Erregistratu</a>
             </div>
 
             <div class="menu-botoia">

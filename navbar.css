@@ -1,8 +1,8 @@
 /* ------ NAVBARRA ------ */
 
 .navbar {
-    background-color: #0d0d0f;
-    color: #fff;
+    background-color: var(--color-orokorra);
+    color: var(--color-txuria);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,11 +13,11 @@
     left: 0;
     padding: 0px 5%;
     height: 60px;
-    border-bottom: 1px solid #2a2a32;
+    border-bottom: 1px solid var(--color-orokorra);
 }
 
 .logoa {
-    color: #c8973a;
+    color: var(--color-hirugarrena);
     font-size: 20px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: bold;
@@ -51,8 +51,8 @@
     top: 60px;
     left: 0;
     right: 0;
-    background-color: #0d0d0f;
-    border-bottom: 1px solid #2a2a32;
+    background-color: var(--color-orokorra);
+    border-bottom: 1px solid var(--color-orokorra);
     padding: 0;
     height: 0;  
 }
@@ -67,53 +67,29 @@
 }
 
 .menu-desplegablea a {
-    color: #ccc;
+    color: var(--color-laugarrena);
     text-decoration: none;
     padding: 14px 5%;
     font-size: 15px;
-    border-bottom: 1px solid #1a1a20;
+    border-bottom: 1px solid var(--color-orokorra);
 }
 
 .menu-desplegablea a:last-of-type {
     border-bottom: none;
 }
 
-.menu-desplegablea a:hover {
-    color: #fff;
-    background-color: #16161c;
-    
+.menu-desplegablea :hover {
+    color: var(--color-txuria);
+    background-color: var(--color-orokorra);
 }
 
 /* Saioa hasi botoia */
 .menu-desplegablea .menu-saioa {
-    color: #0d0d0f;
-    background-color: #c8973a;
+    color: var(--color-orokorra);
+    background-color: var(--color-hirugarrena);
     margin: 12px 5%;
     padding: 12px 5%;
     border-radius: 8px;
     text-align: center;
     font-weight: bold;
-    border: none;
-}
-
-.menu-desplegablea .menu-saioa:hover {
-    background-color: #b5852e;
-    color: #0d0d0f;
-}
-
-/* Erregistratu botoia */
-.menu-desplegablea .menu-erregistratu {
-    color: #0d0d0f;
-    background-color: #c8973a;
-    margin: 12px 5%;
-    padding: 12px 5%;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-    border: none;
-}
-
-.menu-desplegablea .menu-erregistratu:hover {
-    background-color: #b5852e;
-    color: #0d0d0f;
 }

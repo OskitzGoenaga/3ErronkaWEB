@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="orokorra.css">
     <link rel="stylesheet" href="txapelketa_barnea.css">
+    <link rel="stylesheet" href="txapelketa_kaxa.css">
 </head>
 
 <img>
@@ -57,8 +58,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["izena"], $_POST["abiz
                 <a href="txapelketak.php" class="atzera-botoia">← Atzera</a>
                 <?php
                 $egoera = $txap['egoera'];
+        
+                $estiloa = "";
+                if ($egoera == "Izen ematen") {
+                    $estiloa = "IzenEmaten";
+                }else if ($egoera == "Amaituta"){
+                    $estiloa = "Amaituta";
+                }else{
+                    $estiloa = "Jolasten";
+                }
                 ?>
-                <p class="egoera"><?= $txap["egoera"]; ?></p>
+
+                <p class="egoera <?= $estiloa ?>"><?= $egoera; ?></p>
+
                 <h1 class="txapelketa_izena"><?= $txap['izena'] ?></h1>
             </div>
         </div>
@@ -101,66 +113,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["izena"], $_POST["abiz
                     <p><?= $txap['deskribapena'] ?></p>
                 </div>
             <?php endif; ?>
-
-            <div class="info-karta">
-
-                <div class="deskribapen-karta">
-                    <h3 class="sariak-titulua">🏅 Sariak</h3>
-                    <p class="sariak-azpititulua">Txapelketa bakoitzeko sariak</p>
-                </div>
-
-                <?php
-                $xmlFitxategia = "./XML/sariak.xml";
-
-                $xml = simplexml_load_file($xmlFitxategia);
-
-                ?>
-
-                <?php foreach ($xml->txapelketa as $txapelketa): ?>
-
-                    <?php $txapelketaIzena = $txapelketa['izena']; ?>
-
-                    <div class="txapelketa-blokea">
-                        <h2 class="txap-izena"><?= $txapelketaIzena; ?></h2>
-                        <div class="sariak-zerrenda">
-
-                            <?php foreach ($txapelketa->sariak->saria as $saria): ?>
-                                <?php
-
-                                $posizioa = $saria->posizioa;
-                                $deskribapena = $saria->deskribapena;
-
-
-                                // Posizioaren araberako ikonoa eta klasea
-                                if ($posizioa == "1") {
-                                    $ikonoa = "🥇";
-                                    $klasea = "saria-1";
-                                } elseif ($posizioa == "2") {
-                                    $ikonoa = "🥈";
-                                    $klasea = "saria-2";
-                                } elseif ($posizioa == "3") {
-                                    $ikonoa = "🥉";
-                                    $klasea = "saria-3";
-                                } else {
-                                    $ikonoa = "🏅";
-                                    $klasea = "saria-txikia";
-                                }
-
-                                ?>
-                                <div class="saria-karta <?= $klasea; ?>">
-                                    <div class="saria-ikonoa"><?= $ikonoa; ?></div>
-                                    <div class="saria-info">
-                                        <div class="saria-posizioa"><?= $posizioa; ?>. postua</div>
-                                        <div class="saria-deskribapena"><?= $deskribapena; ?></div>
-                                    </div>
-                                </div>
-
-                            <?php endforeach; ?>
-
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
         </div>
 
         <div class="inskripzio-zutabea">

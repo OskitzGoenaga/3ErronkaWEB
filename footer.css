@@ -1,7 +1,7 @@
 footer { 
-    border-top: 1px solid #2a2a32; 
-    background-color: #0d0d0f; 
-    color: #fff; 
+    border-top: 1px solid var(--color-orokorra); 
+    background-color: var(--color-orokorra); 
+    color: var(--color-txuria); 
     padding: 20px 0;   
 } 
 
@@ -18,7 +18,7 @@ footer {
 
 
 .footer-logoa a { 
-    color: #c8973a; 
+    color: var(--color-hirugarrena); 
     text-decoration: none; 
     font-size: 1.4rem; 
     font-weight: 700px; 
@@ -26,7 +26,7 @@ footer {
 
 .footer-deskribapena { 
     font-size: 0.85rem; 
-    color: #5a5548; 
+    color: var(--color-laugarrena); 
 } 
 
 /* Footer nabigazio linkak */ 
@@ -41,18 +41,18 @@ footer {
     font-size: 0.75rem; 
     font-weight: 700; 
     text-transform: uppercase; 
-    color: #c8973a; 
+    color: var(--color-hirugarrena); 
     margin-bottom: 4px; 
 } 
 
 .footer-estekak a { 
-    color: #a09880; 
+    color: var(--color-laugarrena); 
     text-decoration: none; 
     font-size: 0.9rem; 
 } 
 
 .footer-estekak a:hover { 
-    color: #fff; 
+    color: var(--color-txuria); 
 } 
 
 /* Footer kontaktua */ 
@@ -67,7 +67,7 @@ footer {
 
 .footer-azpian {
     text-align: center;
-    border-top: 1px solid #1a1a20; 
+    border-top: 1px solid var(--color-orokorra); 
     padding: 20px 0px 0px 0px;
     margin-top: 20px; 
 }

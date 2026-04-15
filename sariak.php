@@ -18,7 +18,7 @@
         <div class="sariak">
 
             <div class="sariak-header">
-                <h1 class="sariak-titulua">🏅 Sariak</h1>
+                <h1 class="sariak-titulua">Sariak</h1>
                 <p class="sariak-azpititulua">Txapelketa bakoitzeko sariak</p>
             </div>
 
