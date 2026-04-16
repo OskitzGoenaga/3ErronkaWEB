@@ -49,7 +49,7 @@
                     </div>
                     <div>
                         <span><?= $txap["total2"]; ?></span>
-                        <span>HERRI PAKTE HARTZEN</span>
+                        <span>HERRI PARTE HARTZEN</span>
                     </div>
                 </div>
             </div>
