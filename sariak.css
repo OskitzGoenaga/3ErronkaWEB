@@ -7,7 +7,7 @@ main {
 }
 
 .sariak{
-    width: 90%;
+    width: 80%;
     max-width: 800px;
     margin: auto;
     padding: 40px 0px;
@@ -19,7 +19,6 @@ main {
 }
 
 .sariak-titulua {
-    font-size: 2.5rem;
     color: var(--color-txuria);
     margin-bottom: 8px;
 }
@@ -82,5 +81,5 @@ main {
 
 .saria-deskribapena {
     font-size: 0.95rem;
-    color: var(--color-laugarrena);
+    color: var(--color-txuria);
 }

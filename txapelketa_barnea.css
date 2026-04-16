@@ -22,11 +22,11 @@ body {
 
 .egoera-badge {
     display: inline-block;
-    padding: 6px 18px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 700;
     width: fit-content;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: var(--color-txuria);
+    background: rgba(42,107,69,0.2);
 }
 
 /* Egoera koloreak */
@@ -50,8 +50,6 @@ body {
 
 .txapelketa-izena {
     font-size: 28px;
-    font-weight: 800;
-    line-height: 1.1;
     color: var(--color-txuria);
 }
 
@@ -70,16 +68,14 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 30px auto;
-    padding: 0 5%;
+    padding: 0px 5%;
 }
 
 /* Sekzio titulua */
 .sekzio-titulua {
     color: var(--color-hirugarrena);
-    font-size: 17px;
-    font-weight: 700;
     padding-bottom: 12px;
     margin-bottom: 20px;
     border-bottom: 2px solid rgba(200, 151, 58, 0.2);
