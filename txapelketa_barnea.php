@@ -8,225 +8,196 @@
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="orokorra.css">
     <link rel="stylesheet" href="txapelketa_barnea.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="txapelketa_kaxa.css">
 </head>
 
-<img>
+<body>
+
 <?php
 include_once "navbar.php";
 include_once "konexioa.php";
 
-$id = isset($_GET['id']) ? $_GET['id'] : 0;
-
-if ($id <= 0) {
-    header("Location: txapelketak.php");
-    exit;
-}
-
+// Txapelketa datuak lortu
 $stmt = $pdo->prepare("SELECT * FROM txapelketak WHERE id = ?");
-$stmt->execute([$id]);
-$txap = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->execute([$_GET['id']]);
+$txapelketa = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!$txap) {
+if (!$txapelketa) {
     header("Location: txapelketak.php");
     exit;
 }
 
+$txapelketa_id = (int) $_GET['id'];
 $mezua = "";
-$errorea = "";
+$mezua_mota = "";
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["izena"], $_POST["abizena"], $_POST["bikotekidea"])) {
-    $izena = trim($_POST["izena"]);
-    $abizena = trim($_POST["abizena"]);
-    $bikotekidea = trim($_POST["bikotekidea"]);
+// ====================== INSKRIPZIO LOGIKA ======================
 
-    if ($izena && $abizena && $bikotekidea) {
-        $mezua = "Inskripzioa ongi bidali da!";
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $emaila      = trim($_POST['emaila']);
+    $bikotekidea = trim($_POST['bikotekidea']);
+    $ezizena     = trim($_POST['ezizena']);
+    $bikote_kant = $txapelketa['bikote_kant'];
+
+    // 1) Egiaztatu biak existitzen direla jokalariak taulan
+    $stmt = $pdo->prepare("SELECT id, izena FROM jokalariak WHERE emaila = ?");
+    $stmt->execute([$emaila]);
+    $jokalari1 = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $stmt2 = $pdo->prepare("SELECT id, izena FROM jokalariak WHERE emaila = ?");
+    $stmt2->execute([$bikotekidea]);
+    $jokalari2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+
+    $stmt3 = $pdo->prepare("SELECT b.id FROM bikoteak as b INNER JOIN txapelketa_bikoteak as t ON b.id = t.bikotea_id WHERE t.txapelketa_id = ? AND b.ezizena = ?");
+    $stmt3->execute([$_GET['id'], $ezizena]);
+    $bikotea = $stmt3->fetch(PDO::FETCH_ASSOC);
+
+    if (!$jokalari1) {
+        $mezua = "Zure emaila ez dago erregistratuta sisteman.";
+        $mezua_mota = "errorea";
+
+    } elseif (!$jokalari2) {
+        $mezua = "Bikotekidearen emaila ez dago erregistratuta sisteman.";
+        $mezua_mota = "errorea";
+
+    } elseif ($bikotea) {
+        $mezua = "Talde izena jada erregistratuta dago txapelketan.";
+        $mezua_mota = "errorea";
+
+    } elseif ($emaila === $bikotekidea) {
+        $mezua = "Zure emaila eta bikotekidearen emaila ezin dira berdinak izan.";
+        $mezua_mota = "errorea";
+
+    } elseif ($bikote_kant >= 32) {
+        $mezua = "Txapelketa honetan ezin zara izena eman, bikote kopurua gehienezkoa da.";
+        $mezua_mota = "errorea";
+
     } else {
-        $errorea = "Mesedez bete eremu guztiak.";
+        
+        $stmt3 = $pdo->prepare("INSERT INTO bikoteak (jokalaria1_id, jokalaria2_id, ezizena) VALUES (?, ?, ?)");
+        $stmt3->execute([$jokalari1['id'], $jokalari2['id'], $ezizena]);
+        $bikote_id = $pdo->lastInsertId();
+
+        $stmt = $pdo->prepare("INSERT INTO txapelketa_bikoteak (txapelketa_id, bikotea_id) VALUES (?, ?)");
+        $stmt->execute([$_GET['id'], $bikote_id]);
+
+        $stmt = $pdo->prepare("UPDATE txapelketak SET bikote_kant = bikote_kant + 1 WHERE id = ?");
+        $stmt->execute([$_GET['id']]);
+
+        $mezua = "Inskripzioa ongi bidali da! Eskerrik asko.";
+        $mezua_mota = "arrakasta";
     }
 }
+
+// Egoera kolorea
+if ($txapelketa["egoera"] == "Izen Ematen") {
+    $estiloa = "IzenEmaten";
+} elseif ($txapelketa["egoera"] == "Amaituta") {
+    $estiloa = "Amaituta";
+} else {
+    $estiloa = "Jolasten";
+}
+
 ?>
 
+    <div class="txapelketa-orria">
 
-<div class="detaile">
-    <form action="txapelketa_barnea.php"></form>
-    <div class="hero-section">
-        <img class="banderaArg" src="<?= $txap["argazkia"]; ?>"></img>
-        <div class="hero-overlay">
-            <div class="hero-content">
+        <section class="hero-sekzioa">
+            <div class="hero-edukia">
                 <a href="txapelketak.php" class="atzera-botoia">← Atzera</a>
-                <?php
-                $egoera = $txap['egoera'];
-        
-                $estiloa = "";
-                if ($egoera == "Izen ematen") {
-                    $estiloa = "IzenEmaten";
-                }else if ($egoera == "Amaituta"){
-                    $estiloa = "Amaituta";
-                }else{
-                    $estiloa = "Jolasten";
-                }
-                ?>
-
-                <p class="egoera <?= $estiloa ?>"><?= $egoera; ?></p>
-
-                <h1 class="txapelketa_izena"><?= $txap['izena'] ?></h1>
+                <p class="egoera-badge <?= $estiloa ?>"><?= htmlspecialchars($txapelketa['egoera']) ?></p>
+                <h1 class="txapelketa-izena"><?= htmlspecialchars($txapelketa['izena']) ?></h1>
             </div>
-        </div>
-    </div>
-    </form>
+        </section>
 
-    <div class="detaile-edukia">
-        <div class="info-zutabea">
-            <h2 class="sekzio-titulua">Txapelketaren datuak</h2>
+        <div class="edukia-kontainerra">
 
-            <div class="info-karta">
-                <div class="info-errenkada">
-                    <span class="info-ikurra">📍</span>
-                    <div>
-                        <p class="info-etiketa">Lekua</p>
-                        <p class="info-balioa"><?= $txap['herria'] ?> — <?= $txap['tokia'] ?></p>
+            <!-- Ezkerreko zutabea -->
+            <div class="info-zutabea">
+                <h2 class="sekzio-titulua">Txapelketaren datuak</h2>
+                <div class="info-kaxa">
+                    <div class="info-lerroa">
+                        <span class="info-ikurra">📍</span>
+                        <div>
+                            <p class="info-etiketa">Lekua</p>
+                            <p class="info-balioa">
+                                <?= htmlspecialchars($txapelketa['herria']) ?> —
+                                <?= htmlspecialchars($txapelketa['tokia']) ?>
+                            </p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="info-errenkada">
-                    <span class="info-ikurra">📅</span>
-                    <div>
-                        <p class="info-etiketa">Data</p>
-                        <p class="info-balioa"><?= $txap['data'] ?></p>
+                    <div class="info-lerroa">
+                        <span class="info-ikurra">📅</span>
+                        <div>
+                            <p class="info-etiketa">Data</p>
+                            <p class="info-balioa"><?= htmlspecialchars($txapelketa['data']) ?></p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="info-errenkada">
-                    <span class="info-ikurra">🃏</span>
-                    <div>
-                        <p class="info-etiketa">Bikote kantitatea</p>
-                        <p class="info-balioa"><?= $txap['bikote_kant'] ?> bikote</p>
+                    <div class="info-lerroa">
+                        <span class="info-ikurra">🃏</span>
+                        <div>
+                            <p class="info-etiketa">Bikote kopurua</p>
+                            <p class="info-balioa"><?= $txapelketa['bikote_kant'] ?> bikote</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <?php if (!empty($txap['deskribapena'])): ?>
-                <div class="deskribapena-karta">
-                    <h3>Deskribapena</h3>
-                    <p><?= $txap['deskribapena'] ?></p>
-                </div>
-            <?php endif; ?>
-        </div>
+            <!-- Eskumako zutabea -->
+            <div class="inskripzio-zutabea">
+                <div class="inskripzio-kaxa <?= $txapelketa["egoera"] !== 'Izen Ematen' ? 'itxita' : '' ?>">
 
-        <div class="inskripzio-zutabea">
-            <div class="inskripzio-karta <?= $egoera !== 'Izen ematen' ? 'itxita' : '' ?>">
+                    <?php if ($txapelketa["egoera"] === 'Izen Ematen'): ?>
 
-                <?php if ($egoera === 'Izen ematen'): ?>
-                    <h2 class="sekzio-titulua">Inskribatu</h2>
-                    <p class="inskripzio-azalpena">Bete beheko formularioa txapelketan parte hartzeko.</p>
+                        <h2 class="sekzio-titulua">Inskribatu</h2>
+                        <p class="inskripzio-azalpena">Bete formularioa txapelketan parte hartzeko.</p>
 
-                    <?php if ($mezua): ?>
-                        <div class="mezua-arrakasta"><?= $mezua ?></div>
+                        <?php if ($mezua): ?>
+                            <div class="mezua <?= $mezua_mota ?>"><?= htmlspecialchars($mezua) ?></div>
+                        <?php endif; ?>
+
+                        <form method="POST" class="inskripzio-formularioa">
+                            <div class="eremu-taldea">
+                                <label for="emaila">Zure emaila</label>
+                                <input type="email" id="emaila" name="emaila" placeholder="Zure emaila" required>
+                            </div>
+                            <div class="eremu-taldea">
+                                <label for="bikotekidea">Bikotekidearen emaila</label>
+                                <input type="email" id="bikotekidea" name="bikotekidea" placeholder="Bikotekidearen emaila" required>
+                            </div>
+
+                            <div class="eremu-taldea">
+                                <label for="ezizena">Taldearen izena</label>
+                                <input type="text" id="ezizena" name="ezizena" placeholder="Taldearen izena" required>
+                            </div>
+                            <button type="submit" class="inskribatu-botoia">
+                                Inskribatu orain
+                            </button>
+                        </form>
+
+                    <?php elseif ($txapelketa["egoera"] === 'Amaituta'): ?>
+                        <div class="inskripzio-itxita">
+                            <span class="itxita-ikurra">🏁</span>
+                            <h3>Txapelketa amaituta</h3>
+                            <p>Txapelketa hau jada amaituta dago.</p>
+                            <a href="txapelketak.php" class="beste-txapelketa-botoia">Txapelketa guztiak ikusi</a>
+                        </div>
+
+                    <?php else: ?>
+                        <div class="inskripzio-itxita">
+                            <span class="itxita-ikurra">⏳</span>
+                            <h3>Jolasten ari da</h3>
+                            <p>Txapelketa hasita dago eta inskripzioak itxita daude.</p>
+                            <a href="txapelketak.php" class="beste-txapelketa-botoia">Txapelketa guztiak ikusi</a>
+                        </div>
                     <?php endif; ?>
-                    <?php if ($errorea): ?>
-                        <div class="mezua-errorea"><?= $errorea ?></div>
-                    <?php endif; ?>
 
-                    <div class="formularioa">
-                        <input type="hidden" name="txapelketa_id" value="<?= $id ?>">
-
-                        <div class="eremu-taldea">
-                            <label for="izena">Izena</label>
-                            <input type="text" id="izena" name="izena" placeholder="Zure izena" required>
-                        </div>
-
-                        <div class="eremu-taldea">
-                            <label for="abizena">Abizena</label>
-                            <input type="text" id="abizena" name="abizena" placeholder="Zure abizena" required>
-                        </div>
-
-                        <div class="eremu-taldea">
-                            <label for="bikotekidea">Bikotekidearen izena</label>
-                            <input type="text" id="bikotekidea" name="bikotekidea" placeholder="Bikotekidearen izena"
-                                required>
-                        </div>
-
-                        <button class="inskribatu-botoia" id="inskribatu-btn" type="button">
-                            Inskribatu orain
-                        </button>
-                    </div>
-
-                <?php elseif ($egoera === 'Amaituta'): ?>
-                    <div class="inskripzio-itxita">
-                        <span class="itxita-ikurra">🏁</span>
-                        <h3>Txapelketa amaituta</h3>
-                        <p>Txapelketa hau jada amaituta dago. Beste txapelketa batzuk ikus ditzazkezu.</p>
-                        <a href="txapelketak.php" class="beste-txap-botoia">Txapelketa guztiak ikusi</a>
-                    </div>
-
-                <?php else: ?>
-                    <div class="inskripzio-itxita">
-                        <span class="itxita-ikurra">⏳</span>
-                        <h3>Jolasten ari da</h3>
-                        <p>Txapelketa hau jadanik hasita dago eta inskripzioak itxita daude.</p>
-                        <a href="txapelketak.php" class="beste-txap-botoia">Beste txapelketa bat bilatu</a>
-                    </div>
-                <?php endif; ?>
-
+                </div>
             </div>
+
         </div>
     </div>
-</div>
 
-<div class="modal-overlay" id="modal">
-    <div class="modal-kaxoa">
-        <h3>Inskripzioa berretsi</h3>
-        <p>Ziur zaude txapelketa honetan inskribatu nahi duzula?</p>
-        <div class="modal-botoiak">
-            <button class="modal-ezeztatu" id="modal-ezeztatu">Ezeztatu</button>
-            <form method="POST" style="display:inline;">
-                <input type="hidden" name="izena" id="modal-izena">
-                <input type="hidden" name="abizena" id="modal-abizena">
-                <input type="hidden" name="bikotekidea" id="modal-bikotekidea">
-                <input type="hidden" name="txapelketa_id" value="<?= $id ?>">
-                <button type="submit" class="modal-berretsi">Inskribatu</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<?php
-include_once "konexioa.php";
-?>
-
-<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
-    crossorigin="anonymous"></script>
-<script src="egoeraKoloreak.js"></script>
-<script>
-    $("#inskribatu-btn").on("click", function () {
-        var izena = $("#izena").val().trim();
-        var abizena = $("#abizena").val().trim();
-        var bikotekidea = $("#bikotekidea").val().trim();
-
-        if (!izena || !abizena || !bikotekidea) {
-            alert("Mesedez bete ereemu guztiak.");
-            return;
-        }
-
-        $("#modal-izena").val(izena);
-        $("#modal-abizena").val(abizena);
-        $("#modal-bikotekidea").val(bikotekidea);
-
-        $("#modal").addClass("aktibo");
-    });
-
-    $("#modal-ezeztatu").on("click", function () {
-        $("#modal").removeClass("aktibo");
-    });
-
-    $("#modal").on("click", function (e) {
-        if ($(e.target).is("#modal")) {
-            $("#modal").removeClass("aktibo");
-        }
-    });
-</script>
-</body>
-
-</html>
+<?php include_once "footer.php"; ?>

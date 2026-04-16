@@ -2,14 +2,14 @@
     <div class="txapelketa_bakoitza">
         <?php
         $estiloa = "";
-        if ($txapelketak["egoera"] == "Izen ematen") {
+        if ($txapelketak["egoera"] == "Izen Ematen") {
             $estiloa = "IzenEmaten";
         }else if ($txapelketak["egoera"] == "Amaituta"){
             $estiloa = "Amaituta";
         }else{
             $estiloa = "Jolasten";
         }
-         ?>
+        ?>
 
         <p class="egoera <?= $estiloa ?>"><?= $txapelketak["egoera"]; ?></p>
         <a class="titulu_txap" href="txapelketa_barnea.php?id=<?= $txapelketak['id']; ?>"><?= $txapelketak["izena"]; ?></a>
