@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="sariak.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="icon" type="image/x-icon" href="Argazkiak/icono.ico" sizes="any">
 </head>
 
 <body>

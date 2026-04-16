@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="orokorra.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="txapelketa_kaxa.css">
-
+    <link rel="icon" type="image/x-icon" href="Argazkiak/icono.ico" sizes="any">
 </head>
 
 <body>

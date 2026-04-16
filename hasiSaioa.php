@@ -14,16 +14,17 @@ require 'konexioa.php';
     <title>Saioa hasi</title>
     <link rel="stylesheet" href="orokorra.css" />
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="Argazkiak/icono.ico" sizes="any">
     <style>
         body {
             background-color: var(--color-orokorra);
         }
 
-        #testua{
+        #testua {
             color: var(--color-laugarrena);
             padding: 0px 30px 30px 30px;
         }
-        
+
         .formularioa {
             text-align: center;
             width: 80%;
@@ -33,12 +34,13 @@ require 'konexioa.php';
             border-radius: 20px;
             border-top: 5px solid var(--color-hirugarrena);
         }
-        .formularioa>h1{
+
+        .formularioa>h1 {
             font-size: 40px;
             color: var(--color-txuria);
         }
 
-        .formularioa>form>label{
+        .formularioa>form>label {
             color: var(--color-txuria);
         }
 
@@ -49,7 +51,7 @@ require 'konexioa.php';
             background-color: var(--color-laugarrena);
         }
 
-        .formularioa>a{
+        .formularioa>a {
             text-decoration: none;
             color: var(--color-txuria);
         }
@@ -70,7 +72,7 @@ require 'konexioa.php';
     <!-- Login formulario nagusia -->
     <div class="formularioa">
 
-        <h1 >SAIOA HASI</h1><br>
+        <h1>SAIOA HASI</h1><br>
         <p id="testua">Txapelketa batean inskribatzeko hasi saioa!</p>
 
         <!-- Login formularioa: datuak hasiSaioa.php-ra bidaltzen dira -->
@@ -86,7 +88,7 @@ require 'konexioa.php';
         </form>
 
         <!-- Konturik ez dutenentzat erregistro orrira esteka -->
-        <a href="login.php">Ez duzu kontua? Klikatu hemen</a>
+        <a href="erregistratu.php">Ez duzu kontua? Klikatu hemen</a>
     </div>
 </body>
 
@@ -100,8 +102,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $pasahitza = $_POST['pasahitza'];
 
-    // Bezeroa bilatu datu-basean (prepared statement erabiliz)
-    $sql = "SELECT * FROM jokalariak WHERE email = :email AND pasahitza = :pasahitza";
+    // Jokalaria bilatu datu-basean (prepared statement erabiliz)
+    $sql = "SELECT * FROM jokalariak WHERE emaila = :email AND pasahitza = :pasahitza";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
         ':email' => $email,
@@ -109,19 +111,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ]);
 
     // Emaitza hartu
-    $bezeroa = $stmt->fetch(PDO::FETCH_ASSOC);
+    $jokalaria = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($bezeroa) {
+    if ($jokalaria) {
         // Bezeroa existitzen bada -> datuak sesioan gorde
-        $_SESSION['id'] = $bezeroa['id'];
-        $_SESSION['izena'] = $bezeroa['izena'];
+        $_SESSION['id'] = $jokalaria['id'];
+        $_SESSION['izena'] = $jokalaria['izena'];
 
         // Hasierako orrira bidali
-        header("Location: sarrera.php");
+        header("Location: index.php");
         exit();
     } else { ?>
         <!-- Datuak okerrak badira alert bat erakutsi -->
-        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> 
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script>alert("Datu okerrak");</script>
     <?php }
 }
