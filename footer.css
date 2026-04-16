@@ -1,5 +1,5 @@
 footer { 
-    border-top: 1px solid var(--color-orokorra); 
+    border-top: 1px solid var(--color-linea); 
     background-color: var(--color-orokorra); 
     color: var(--color-txuria); 
     padding: 20px 0;   
@@ -67,7 +67,7 @@ footer {
 
 .footer-azpian {
     text-align: center;
-    border-top: 1px solid var(--color-orokorra); 
+    border-top: 1px solid var(--color-linea); 
     padding: 20px 0px 0px 0px;
     margin-top: 20px; 
 }

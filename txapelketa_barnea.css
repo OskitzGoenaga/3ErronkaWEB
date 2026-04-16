@@ -1,417 +1,399 @@
+/* ====================== TXAPELKETA BARNEA ====================== */
+
 body {
     background-color: var(--color-orokorra);
     color: var(--color-txuria);
-    padding-top: 60px;
+    font-family: inherit;
 }
 
-/* ---- HERO ---- */
-
-.hero-section {
+/* ---------------------- HERO ---------------------- */
+.txapelketa-orria {
     position: relative;
-    width: 100%;
-    height: 380px;
-    overflow: hidden;
+    margin-top: 60px;
 }
 
-.banderaArg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(0.45);
-    transition: transform 8s ease;
-}
-
-.hero-section:hover .banderaArg {
-    transform: scale(1.04);
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    padding: 40px 15%;
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.95) 0%,
-        rgba(0, 0, 0, 0.3) 60%,
-        transparent 100%
-    );
-}
-
-.hero-content {
+.hero-edukia {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px 5%;
     gap: 12px;
 }
 
-.egoera{
-    width: 22%;
-    padding: 5px 15px;
-    border-radius: 5px;
+.egoera-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    width: fit-content;
+}
+
+/* Egoera koloreak */
+.izen-ematen {
+    background-color: rgba(200, 151, 58, 0.2);
+    color: var(--color-hirugarrena);
+    border: 1px solid rgba(200, 151, 58, 0.4);
+}
+
+.jolasten {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.amaituta {
+    background-color: rgba(107, 114, 128, 0.15);
+    color: #9ca3af;
+    border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.txapelketa-izena {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
     color: var(--color-txuria);
-    background: rgba(42,107,69,0.2);
 }
 
 .atzera-botoia {
     color: var(--color-laugarrena);
     text-decoration: none;
-    font-size: 14px;
-    transition: color 0.2s;
-    width: fit-content;
+    font-size: 15px;
 }
 
 .atzera-botoia:hover {
     color: var(--color-hirugarrena);
 }
 
-.egoera-badge {
-    display: inline-block;
-    padding: 5px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: bold;
-    border: 1px solid transparent;
-    width: fit-content;
-}
-
-.txapelketa_izena {
-    font-size: 38px;
-    font-weight: 700;
-    color: var(--color-txuria);
-    line-height: 1.15;
-    max-width: 700px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.6);
-}
-
-/* ---- EDUKIA ---- */
-
-.detaile {
-    width: 100%;
-}
-
-.detaile-edukia {
+/* ---------------------- EDUKIA ---------------------- */
+.edukia-kontainerra {
     display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 30px;
-    width: 70%;
-    margin: 40px auto 80px auto;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 5%;
 }
 
-/* ---- SEKZIO TITULUA ---- */
-
+/* Sekzio titulua */
 .sekzio-titulua {
     color: var(--color-hirugarrena);
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
+    padding-bottom: 12px;
     margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--color-orokorra);
+    border-bottom: 2px solid rgba(200, 151, 58, 0.2);
 }
 
-/* ---- INFO KARTA ---- */
-
-.info-karta {
+/* Info kaxa */
+.info-kaxa {
     background-color: var(--color-orokorra);
-    border-radius: 12px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    border-radius: 14px;
+    padding: 0 20px 20px 20px;
     margin-bottom: 20px;
 }
 
-.info-errenkada {
+.info-lerroa {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 18px 0;
-    border-bottom: 1px solid var(--color-orokorra);
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.info-errenkada:last-child {
+.info-lerroa:last-child {
     border-bottom: none;
 }
 
 .info-ikurra {
     font-size: 22px;
     flex-shrink: 0;
-    margin-top: 2px;
 }
 
 .info-etiketa {
     font-size: 12px;
     color: var(--color-laugarrena);
     text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 4px;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
 }
 
 .info-balioa {
-    font-size: 16px;
+    font-size: 15px;
     color: var(--color-txuria);
     font-weight: 500;
 }
 
-/* ---- DESKRIBAPENA ---- */
-
-.deskribapena-karta {
+/* Inskripzio kaxa */
+.inskripzio-kaxa {
     background-color: var(--color-orokorra);
-    border-radius: 12px;
-    padding: 24px;
+    border-radius: 14px;
+    padding: 0 24px 24px 24px;
+    position: relative;
 }
 
-.deskribapena-karta h3 {
-    color: var(--color-hirugarrena);
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.deskribapena-karta p {
-    color: var(--color-laugarrena);
-    line-height: 1.7;
-    font-size: 15px;
-}
-
-/* ---- INSKRIPZIO ZUTABEA ---- */
-
-.inskripzio-karta {
-    background-color: var(--color-orokorra);
-    border-radius: 12px;
-    padding: 28px;
-    position: sticky;
-    top: 80px;
-    height: fit-content;
-}
-
-.inskripzio-azalpena {
-    color: var(--color-laugarrena);
-    font-size: 14px;
-    margin-bottom: 22px;
-    line-height: 1.6;
-}
-
-/* ---- FORMULARIOA ---- */
-
-.formularioa {
+/* Formularioa */
+.inskripzio-formularioa {
     display: flex;
     flex-direction: column;
-    gap: 16px;
 }
 
 .eremu-taldea {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 7px;
+    margin-top: 10px;
 }
 
 .eremu-taldea label {
     font-size: 13px;
     color: var(--color-txuria);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.7px;
 }
 
 .eremu-taldea input {
-    background-color: var(--color-orokorra);
-    border: 1px solid var(--color-orokorra);
-    border-radius: 8px;
-    padding: 11px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(200, 151, 58, 0.2);
+    border-radius: 9px;
+    padding: 13px 16px;
     color: var(--color-txuria);
-    font-size: 15px;
-    transition: border-color 0.25s, box-shadow 0.25s;
+    font-size: 16px;
     width: 100%;
-    font-family: inherit;
-}
-
-.eremu-taldea input::placeholder {
-    color: var(--color-laugarrena);
 }
 
 .eremu-taldea input:focus {
-    outline: none;
     border-color: var(--color-hirugarrena);
-    box-shadow: 0 0 0 3px rgba(200, 151, 58, 0.12);
+    box-shadow: 0 0 0 4px rgba(200, 151, 58, 0.15);
+    outline: none;
 }
 
 .inskribatu-botoia {
-    margin-top: 6px;
-    background-color: var(--color-hirugarrena);
+    margin-top: 10px;
+    background: var(--color-hirugarrena);
     color: var(--color-orokorra);
     border: none;
-    border-radius: 8px;
-    padding: 14px;
-    font-size: 15px;
+    border-radius: 9px;
+    padding: 15px;
+    font-size: 16px;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.15s;
-    font-family: inherit;
     width: 100%;
-    letter-spacing: 0.3px;
 }
 
-.inskribatu-botoia:hover {
-    background-color: var(--color-hirugarrena);
-    transform: translateY(-1px);
-}
-
-.inskribatu-botoia:active {
-    transform: translateY(0);
-}
-
-/* ---- ITXITA ---- */
-
+/* Itxita egoera */
 .inskripzio-itxita {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    gap: 12px;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .itxita-ikurra {
-    font-size: 40px;
+    font-size: 48px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .inskripzio-itxita h3 {
-    color: var(--color-txuria);
     font-size: 17px;
+    margin-bottom: 12px;
 }
 
-.inskripzio-itxita p {
-    color: var(--color-laugarrena);
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.beste-txap-botoia {
+.beste-txapelketa-botoia {
     display: inline-block;
-    margin-top: 8px;
-    padding: 11px 22px;
-    background-color: transparent;
-    border: 1px solid var(--color-hirugarrena);
-    color: var(--color-hirugarrena);
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.beste-txap-botoia:hover {
-    background-color: var(--color-hirugarrena);
+    margin-top: 16px;
+    padding: 12px 20px;
+    background: var(--color-hirugarrena);
     color: var(--color-orokorra);
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
 }
 
-/* ---- MEZUAK ---- */
-
-.mezua-arrakasta {
-    background: rgba(42, 107, 69, 0.15);
-    border: 1px solid rgba(93, 186, 133, 0.3);
-    color: var(--color-txuria);
-    border-radius: 8px;
-    padding: 12px 16px;
-    font-size: 14px;
-    margin-bottom: 16px;
+/* Mezuak */
+.mezua {
+    padding: 14px 18px;
+    border-radius: 9px;
+    font-size: 15px;
+    margin-bottom: 20px;
 }
 
-.mezua-errorea {
-    background: rgba(135, 41, 22, 0.2);
-    border: 1px solid rgba(184, 107, 93, 0.3);
-    color: var(--color-bigarrena);
-    border-radius: 8px;
-    padding: 12px 16px;
-    font-size: 14px;
-    margin-bottom: 16px;
+.mezua.arrakasta {
+    background: rgba(42, 107, 69, 0.2);
+    border: 1px solid rgba(93, 186, 133, 0.4);
+    color: #a1e0c4;
 }
 
-/* ---- MODAL ---- */
+.mezua.errorea {
+    background: rgba(184, 71, 48, 0.2);
+    border: 1px solid rgba(220, 120, 100, 0.4);
+    color: #ff9e8a;
+}
 
+/* ====================== MODALA ====================== */
 .modal-overlay {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(4px);
 }
 
 .modal-overlay.aktibo {
     display: flex;
 }
 
-.modal-kaxoa {
+.modal-kaxa {
     background: var(--color-orokorra);
-    border: 1px solid var(--color-orokorra);
-    border-radius: 14px;
-    padding: 36px;
-    max-width: 420px;
+    border-radius: 16px;
+    padding: 32px 24px;
+    max-width: 440px;
     width: 90%;
     text-align: center;
-    animation: modalSartu 0.2s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-@keyframes modalSartu {
-    from { opacity: 0; transform: scale(0.95) translateY(10px); }
-    to   { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-.modal-kaxoa h3 {
+.modal-kaxa h3 {
     color: var(--color-hirugarrena);
     font-size: 20px;
-    margin-bottom: 12px;
-}
-
-.modal-kaxoa p {
-    color: var(--color-bigarrena);
-    font-size: 15px;
-    margin-bottom: 28px;
-    line-height: 1.6;
+    margin-bottom: 16px;
 }
 
 .modal-botoiak {
     display: flex;
-    gap: 12px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.modal-ezeztatu,
+.modal-berretsi {
+    padding: 12px 28px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
 }
 
 .modal-ezeztatu {
-    padding: 11px 24px;
     background: transparent;
-    border: 1px solid var(--color-orokorra);
-    color: var(--color-bigarrena);
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: inherit;
-    transition: border-color 0.2s, color 0.2s;
+    border: 1px solid var(--color-laugarrena);
+    color: var(--color-laugarrena);
 }
 
 .modal-ezeztatu:hover {
-    border-color: var(--color-bigarrena);
+    border-color: var(--color-txuria);
     color: var(--color-txuria);
 }
 
 .modal-berretsi {
-    padding: 11px 24px;
     background: var(--color-hirugarrena);
-    border: none;
     color: var(--color-orokorra);
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 700;
-    font-family: inherit;
-    transition: background-color 0.2s;
+    border: none;
 }
 
-.modal-berretsi:hover {
-    background-color: var(--color-hirugarrena);
+/* ====================== TABLET (min-width: 640px) ====================== */
+@media (min-width: 640px) {
+    .hero-edukia {
+        padding: 20px 8%;
+    }
+
+    .txapelketa-izena {
+        font-size: 34px;
+    }
+
+    .sekzio-titulua {
+        font-size: 18px;
+    }
+
+    .info-kaxa {
+        padding: 0 28px 28px 28px;
+    }
+
+    .inskripzio-kaxa {
+        padding: 0 32px 32px 32px;
+    }
+
+    .modal-botoiak {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .modal-ezeztatu,
+    .modal-berretsi {
+        width: auto;
+    }
+}
+
+/* ====================== DESKTOP (min-width: 1024px) ====================== */
+@media (min-width: 1024px) {
+    .txapelketa-orria {
+        margin-top: 100px;
+    }
+
+    .hero-edukia {
+        padding: 0 15%;
+    }
+
+    .txapelketa-izena {
+        font-size: 42px;
+        max-width: 800px;
+    }
+
+    .edukia-kontainerra {
+        grid-template-columns: 1fr 400px;
+        gap: 40px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    .sekzio-titulua {
+        font-size: 19px;
+    }
+
+    .info-kaxa {
+        padding: 0 28px 28px 28px;
+        margin-bottom: 30px;
+    }
+
+    .info-lerroa {
+        gap: 18px;
+        padding: 20px 0;
+    }
+
+    .info-ikurra {
+        font-size: 24px;
+    }
+
+    .info-etiketa {
+        font-size: 12.5px;
+    }
+
+    .info-balioa {
+        font-size: 16.5px;
+    }
+
+    .inskripzio-kaxa {
+        padding: 0 32px 32px 32px;
+        position: sticky;
+        top: 90px;
+    }
+
+    .eremu-taldea label {
+        font-size: 13.5px;
+    }
+
+    .modal-kaxa {
+        padding: 40px 35px;
+    }
+
+    .modal-kaxa h3 {
+        font-size: 22px;
+    }
+
+    .modal-botoiak {
+        margin-top: 30px;
+    }
 }
