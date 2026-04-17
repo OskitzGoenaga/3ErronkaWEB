@@ -1,48 +1,87 @@
-.txapelketa_bakoitza{
+.txapelketa_bakoitza {
     width: 100%;
-    height: auto;
-    padding: 20px;
+    height: 210px;
+    padding: 15px;
     color: var(--color-laugarrena);
-    margin-bottom: 20px;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
+    gap: 12px;
     border-radius: 10px;
     background-color: var(--color-bigarrena);
+    margin-top: 60px;
 }
 
-.titulu_txap{
+.kaxa_goialdea {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+}
+
+.kaxa_ezkerraldea {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.kaxa_argazkia {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.titulu_txap {
     color: var(--color-txuria);
     text-decoration: none;
     cursor: pointer;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 16px;
 }
 
-.egoera{
-    padding: 5px 15px;
+.egoera {
+    padding: 3px 10px;
     border-radius: 5px;
     color: var(--color-txuria);
-    background: rgba(42,107,69,0.2);
+    background: rgba(42, 107, 69, 0.2);
+    font-size: 13px;
+    display: inline-block;
 }
 
-.linea{
+.kokalekua {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.linea {
     border-top: 2px solid var(--color-txuria);
     width: 100%;
+    margin-bottom: 20px;
 }
 
-.IzenEmaten{
-    background-color: rgba(42,107,69,0.2);
+.IzenEmaten {
+    background-color: rgba(42, 107, 69, 0.2);
     color: #5dba85;
 }
 
-.Amaituta{
+.Amaituta {
     background-color: rgba(135, 41, 22, 0.46);
     color: #b86b5d;
 }
 
-.Jolasten{
+.Jolasten {
     background-color: rgba(190, 166, 45, 0.46);
     color: #cdd189;
+}
+
+.bigarrenzatia{
+    width: 100%;
 }

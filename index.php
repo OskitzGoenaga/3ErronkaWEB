@@ -10,7 +10,30 @@
     <link rel="stylesheet" href="orokorra.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="txapelketa_kaxa.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
     <link rel="icon" type="image/x-icon" href="Argazkiak/icono.ico" sizes="any">
+    <style>
+    .slider {
+        width: 300px;
+        margin: auto;
+    }
+    .slick-slide {
+        height: 230px;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+        color: black;
+        font-size: 40px;
+    }
+    .bigarrenzatia{
+        margin-top: 30px;
+    }
+    .txapelketa_bakoitza{
+        background-color: #222222;
+    }
+    </style>
 </head>
 
 <body>
@@ -55,17 +78,45 @@
             </div>
         </div>
         <div class="txapelketa_akt">
+            <img src="Argazkiak/fondo.jpg" alt="">
             <div class="hasiera">
-                <h2 class="txapelketa_akt_tituloa">Txapelketa Aktiboak</h2>
                 <div class="txapelketa_akt_karta">
-                    <?php
-                    $stmt = $pdo->prepare("SELECT * FROM txapelketak WHERE egoera in ('izen ematen', 'jolasten')");
-                    $stmt->execute();
-                    ?>
-                   <?php include_once("txapelketa_kaxa.php"); ?>
+                    <div class="kutxa-edukia slider">
+                        <?php
+                        $stmt = $pdo->prepare("SELECT * FROM txapelketak WHERE egoera in ('izen ematen', 'jolasten')");
+                        $stmt->execute();
+                        ?>
+                        <?php include_once("txapelketa_kaxa.php"); ?>
+                    </div>
                 </div>
             </div>
         </div>
+        <section class="informazioa">
+            <div class="historia">
+                <h2>Euskal Herriko Mus Federazioa</h2>
+                <p>La federación nació en 2002, cuando la asociación Iparra Hegoa comenzó a organizar el primer Campeonato de Mus de Euskal Herria. El objetivo inicial era que jugadores de los siete territorios vascos compitieran juntos como pueblo, algo que no existía hasta entonces. Con el tiempo, el campeonato fue creciendo y se vio la necesidad de crear una estructura propia. Así se fundó formalmente la Euskal Herriko Mus Federazioa, representada por delegados de los siete territorios.</p>
+                <img src="Argazkiak/ikurrina.jpg">
+            </div>
+            <div class="helburuak">
+                <h2>Helburuak</h2>
+                <ul>
+                    <li>Representar a Euskal Herria ante el mundo en el juego del mus, al ser el juego de mesa más extendido en el territorio</li>
+                    <li>No sustituir los campeonatos locales existentes, sino potenciarlos.</li>
+                    <li>Reivindicar la identidad vasca a través del mus como patrimonio cultural vivo.</li>
+                </ul>
+                <img src="Argazkiak/karta.jpg">
+            </div>
+        </section>
     </main>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.6.0.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
+    });
+   </script>
     <?php include_once("footer.php"); ?>
