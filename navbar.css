@@ -113,3 +113,114 @@
 .sesioaHasi{
     align-items: center;
 }
+
+/* ------ TABLET (min-width: 768px) ------ */
+@media (min-width: 768px) {
+    .navbar {
+        height: 70px;
+        padding: 0 6%;
+    }
+
+    .logoa {
+        font-size: 26px;
+    }
+
+    /* Ocultar botón hamburguesa y menú desplegable */
+    .menu-botoia {
+        display: none;
+    }
+
+    .menu-desplegablea {
+        display: flex !important;
+        flex-direction: row !important;
+        position: static !important;
+        height: auto !important;
+        padding: 0 !important;
+        background-color: transparent !important;
+        border-bottom: none !important;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .menu-desplegablea a {
+        padding: 8px 14px;
+        font-size: 15px;
+        border-bottom: none !important;
+        border-radius: 7px;
+        color: var(--color-laugarrena);
+        transition: color 0.2s, background 0.2s;
+    }
+
+    .menu-desplegablea a:hover {
+        color: var(--color-txuria);
+        background-color: rgba(255,255,255,0.07);
+    }
+
+    /* Botones sesión en horizontal */
+    .sesioa {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .sesioaHasi {
+        flex-direction: row;
+        margin-top: 0;
+        gap: 8px;
+    }
+
+    .menu-desplegablea .menu-saioa {
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 7px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-orokorra);
+        background-color: var(--color-hirugarrena);
+        border: none;
+        white-space: nowrap;
+    }
+
+    /* Botón registro: contorno dorado */
+    .sesioaHasi a.menu-saioa:last-child {
+        background-color: transparent;
+        color: var(--color-hirugarrena);
+        border: 1.5px solid var(--color-hirugarrena);
+    }
+
+    .sesioaHasi a.menu-saioa:last-child:hover {
+        background-color: var(--color-hirugarrena);
+        color: var(--color-orokorra);
+    }
+
+    .perfila {
+        height: 36px;
+    }
+
+    .mensajeUsuario {
+        font-size: 14px;
+        color: var(--color-laugarrena);
+    }
+}
+
+/* ------ DESKTOP (min-width: 1024px) ------ */
+@media (min-width: 1024px) {
+    .navbar {
+        height: 72px;
+        padding: 0 8%;
+    }
+
+    .logoa {
+        font-size: 28px;
+    }
+
+    .menu-desplegablea a {
+        font-size: 16px;
+        padding: 9px 16px;
+    }
+
+    .menu-desplegablea .menu-saioa {
+        font-size: 15px;
+        padding: 9px 20px;
+    }
+}

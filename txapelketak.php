@@ -55,7 +55,9 @@
             </div>
         </form>
 
+        <div class="txapelketak-grid">
         <?php include_once("txapelketa_kaxa.php"); ?>
+        </div>
     </section>
 
     <script src="https://code.jquery.com/jquery-4.0.0.js"

@@ -33,6 +33,14 @@
     .txapelketa_bakoitza{
         background-color: #222222;
     }
+    @media (min-width: 768px) {
+        .slider { width: 85%; max-width: 700px; }
+        .slick-slide { height: auto; padding: 0 6px; }
+        .slick-list { padding: 0 !important; }
+    }
+    @media (min-width: 1024px) {
+        .slider { width: 90%; max-width: 900px; }
+    }
     </style>
 </head>
 
@@ -115,7 +123,30 @@
     $(document).ready(function(){
         $('.slider').slick({
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 99999,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
     });
    </script>

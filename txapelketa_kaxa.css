@@ -85,3 +85,49 @@
 .bigarrenzatia{
     width: 100%;
 }
+
+/* Grid container para txapelketak.php */
+.txapelketak-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .txapelketak-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .txapelketa_bakoitza {
+        margin-top: 0;
+        height: auto;
+        min-height: 220px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .txapelketak-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .txapelketa_bakoitza {
+        min-height: 240px;
+        padding: 18px;
+    }
+
+    .kaxa_argazkia {
+        width: 85px;
+        height: 85px;
+    }
+
+    .titulu_txap {
+        font-size: 17px;
+    }
+
+    .kokalekua {
+        font-size: 14px;
+    }
+}
