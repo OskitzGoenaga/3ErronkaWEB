@@ -32,14 +32,21 @@
     }
     .txapelketa_bakoitza{
         background-color: #222222;
+        min-height: 260px;
+        padding: 20px;
+        margin: 10px;
     }
     @media (min-width: 768px) {
         .slider { width: 85%; max-width: 700px; }
-        .slick-slide { height: auto; padding: 0 6px; }
-        .slick-list { padding: 0 !important; }
+        .slick-slide { height: auto; padding: 0 10px; }
+        .slick-list { margin: 0 -10px; }
+        .txapelketa_bakoitza { min-height: 280px; padding: 22px; }
     }
     @media (min-width: 1024px) {
-        .slider { width: 90%; max-width: 900px; }
+        .slider { width: 90%; max-width: 960px; }
+        .slick-slide { padding: 0 14px; }
+        .slick-list { margin: 0 -14px; }
+        .txapelketa_bakoitza { min-height: 300px; padding: 26px; }
     }
     </style>
 </head>

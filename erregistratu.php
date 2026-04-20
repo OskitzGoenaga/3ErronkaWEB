@@ -57,6 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         .formularioa>form>input { border-radius: 7px; border: 1px solid var(--color-bigarrena); padding: 10px 30px; background-color: var(--color-laugarrena); }
         .formularioa>a { text-decoration: none; color: var(--color-txuria); }
         .formularioa>form>#saioaBtn { margin: 20px; background-color: var(--color-hirugarrena); color: var(--color-orokorra); padding: 10px 30px; border-radius: 5px; font-weight: bold; border: var(--color-bigarrena); }
+        @media (min-width: 768px) {
+            .formularioa { width: 60%; max-width: 520px; }
+        }
+        @media (min-width: 1024px) {
+            .formularioa { width: 40%; max-width: 480px; }
+        }
     </style>
 </head>
 <body>

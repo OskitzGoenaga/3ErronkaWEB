@@ -65,6 +65,20 @@ require 'konexioa.php';
             font-weight: bold;
             border: var(--color-bigarrena);
         }
+
+        @media (min-width: 768px) {
+            .formularioa {
+                width: 60%;
+                max-width: 500px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .formularioa {
+                width: 40%;
+                max-width: 460px;
+            }
+        }
     </style>
 </head>
 

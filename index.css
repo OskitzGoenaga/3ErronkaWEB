@@ -80,36 +80,81 @@ main {
 .informazioa {
   width: 100%;
   margin: auto;
+  margin-top: 60px;
+}
+
+/* Título de sección compartido */
+.informazioa h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .historia {
-  padding: 30px;
+  padding: 50px 36px 40px;
   background-color: var(--color-bigarrena);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.historia h2 {
+  color: var(--color-hirugarrena);
+  border-bottom: 2px solid var(--color-hirugarrena);
+  padding-bottom: 10px;
+  width: 100%;
 }
 
 .historia p {
-  margin-top: 20px;
+  margin-top: 18px;
   color: var(--color-laugarrena);
+  line-height: 1.7;
+  max-width: 480px;
 }
 
 .historia img,
 .helburuak img {
-  margin-top: 20px;
-  border-radius: 10px;
+  margin-top: 28px;
+  border-radius: 12px;
   width: 100%;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.45);
 }
 
 .helburuak h2 {
+  color: var(--color-orokorra);
+  border-bottom: 2px solid rgba(0,0,0,0.25);
+  padding-bottom: 10px;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .helburuak {
-  padding: 30px;
-   text-align: center;
+  padding: 50px 36px 40px;
+  text-align: center;
   background-color: rgb(169, 132, 63);
   color: var(--color-orokorra);
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.helburuak ul {
+  list-style: disc;
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 22px;
+  max-width: 460px;
+}
+
+.helburuak ul li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 /* ------ TABLET (min-width: 768px) ------ */
@@ -133,9 +178,8 @@ main {
         gap: 60px;
     }
 
-    /* Slider: 3 txapelketas visibles */
     .slider {
-        width: 85% !important;
+        width: 85%;
         max-width: 700px;
     }
 
@@ -143,18 +187,23 @@ main {
     .informazioa {
         display: flex;
         flex-direction: row;
+        margin-top: 70px;
     }
 
     .historia,
     .helburuak {
         flex: 1;
-        padding: 40px;
+        padding: 60px 44px;
     }
 
     .historia img,
     .helburuak img {
         max-height: 220px;
         object-fit: cover;
+    }
+
+    .informazioa h2 {
+        font-size: 24px;
     }
 }
 
@@ -189,21 +238,28 @@ main {
         font-size: 180%;
     }
 
-    /* Slider más ancho en desktop */
     .slider {
-        width: 90% !important;
-        max-width: 900px;
+        width: 90%;
+        max-width: 960px;
+    }
+
+    .informazioa {
+        margin-top: 80px;
     }
 
     .historia,
     .helburuak {
-        padding: 60px 50px;
+        padding: 70px 60px;
     }
 
     .historia img,
     .helburuak img {
         max-height: 280px;
         object-fit: cover;
+    }
+
+    .informazioa h2 {
+        font-size: 26px;
     }
 }
 
